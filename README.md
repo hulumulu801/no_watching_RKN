@@ -10,3 +10,7 @@ Linux(Ubuntu 20.04.3 LTS)
 - устанавливаем GIT:
 
   sudo apt install git -y
+
+- копируем репозиторий:
+
+  git clone https://github.com/hulumulu801/no_watching_RKN.git
