@@ -8,4 +8,5 @@ Linux(Ubuntu 20.04.3 LTS)
 # Использование:
 
 - устанавливаем GIT:
+
   sudo apt install git -y
