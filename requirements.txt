@@ -1,0 +1,13 @@
+beautifulsoup4==4.10.0
+certifi==2021.5.30
+charset-normalizer==2.0.5
+fake-useragent==0.1.11
+gitdb==4.0.7
+GitPython==3.1.24
+idna==3.2
+lxml==4.6.3
+requests==2.26.0
+smmap==4.0.0
+soupsieve==2.2.1
+typing-extensions==3.10.0.2
+urllib3==1.26.6
