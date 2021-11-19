@@ -9,7 +9,7 @@ Linux(Ubuntu 20.04.3 LTS)
 
 - устанавливаем GIT:
 
-  sudo apt install git -y
+  **sudo apt install git -y**
 
 - копируем репозиторий:
 
