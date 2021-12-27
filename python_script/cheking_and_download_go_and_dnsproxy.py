@@ -101,16 +101,15 @@ def get_retry_requests_golang(lists_urls):
             divs = soup.find(
                                         "body", class_ = "Site"
             ).find(
-                                        "main", id = "page"
+                                        "main", class_ = re.compile("SiteContent ")
             ).find(
-                                        "div", class_ = "container"
+                                        "article", class_ = "Downloads Article"
             ).find(
                                         "div", class_ = "toggleVisible"
             ).find(
                             "table", class_ = "downloadtable"
             ).find_all("tr")
             for div in divs:
-
                 name_OS_Linux = div.find(
                                             string = re.compile("Lin")
                 )
@@ -183,6 +182,7 @@ def get_retry_requests_golang(lists_urls):
                                                         f"Mac---{arh_proc_ARM64}": link_download
                             }
                             lists_all.append(dict_os_mac_arm64)
+
     return lists_all
 
 def get_link_golang_and_github(dict_system_information, dict_github, lists_golang):
@@ -199,12 +199,11 @@ def get_link_golang_and_github(dict_system_information, dict_github, lists_golan
             if link_golang:
                 version_go_golang = link_golang.split("/go")[-1].split(f".{system_machine.lower()}")[0]
                 version_go_golang = re.sub(r"\.[^.]*$", "", version_go_golang)
-                if float(version_go_github) < float(version_go_golang):
-                    dict_download = {
-                                        "go": link_golang,
-                                        "github": link_dnspoxy_github
-                    }
-                    return dict_download
+                dict_download = {
+                                    "go": link_golang,
+                                    "github": link_dnspoxy_github
+                }
+                return dict_download
         except KeyError as e:
             pass
 
